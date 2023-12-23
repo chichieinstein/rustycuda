@@ -56,4 +56,8 @@ mod tests {
         let mut device_ptr = DevicePtr::<Complex<f64>>::new(100);
         device_ptr.display(10);
     }
+
+    fn others() {
+        todo!();
+    }
 }
