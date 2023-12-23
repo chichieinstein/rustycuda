@@ -1,5 +1,5 @@
 extern crate device_sys;
-use device_sys::{memory_allocate_device, memory_deallocate_device, transfer};
+use device_sys::{memory_allocate_device, memory_deallocate_device, transfer, bessel_func};
 use num_complex::Complex;
 use std::ffi::c_void;
 use std::mem::size_of;
@@ -51,6 +51,11 @@ impl<T: Display + Default + Clone> Drop for DevicePtr<T> {
         // println!("Memory getting deallocated in Rust");
         unsafe { memory_deallocate_device(self.ptr as *mut c_void) };
     }
+}
+
+pub fn compute_bessel(inp: f32) -> f32
+{
+    unsafe{bessel_func(inp)}
 }
 #[cfg(test)]
 mod tests {

@@ -1,4 +1,5 @@
 #include "../include/device_C_interface.cuh"
+using std::cyl_bessel_if;
 
 extern "C"
 {
@@ -17,5 +18,10 @@ extern "C"
     void transfer(void* cpu_arr, void* gpu_arr, int count)
     {
         cudaMemcpy(cpu_arr, gpu_arr, count, cudaMemcpyDeviceToHost);
+    }
+
+    float besse_func(float inp)
+    {
+        return cyl_bessel_if(0.0, inp);
     }
 }
