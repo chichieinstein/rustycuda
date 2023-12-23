@@ -6,8 +6,8 @@ use std::mem::size_of;
 use std::{clone::Clone, default::Default, fmt::Display};
 
 pub struct DevicePtr<T: Display + Default + Clone> {
-    ptr: *mut T,
-    size: i32,
+    pub ptr: *mut T,
+    pub size: i32,
 }
 
 impl<T: Display + Default + Clone> DevicePtr<T> {
