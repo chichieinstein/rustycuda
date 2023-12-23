@@ -42,7 +42,7 @@ impl<T: Display + Default + Clone> DevicePtr<T> {
 
     pub fn dump(&self, output: &mut [T])
     {
-        unsafe{transfer{output.as_mut_ptr as *mut c_void, self.ptr as *mut c_void, self.size * (size_of::<T>() as i32)}}
+        unsafe{transfer(output.as_mut_ptr() as *mut c_void, self.ptr as *mut c_void, self.size * (size_of::<T>() as i32))}
     }
 }
 
