@@ -1,0 +1,10 @@
+[workspace]
+
+members = [
+    "rustdevice",
+    "device-sys",
+]
+
+[workspace.dependencies]
+num = "0.4.1"
+num-complex = "0.4.4"
