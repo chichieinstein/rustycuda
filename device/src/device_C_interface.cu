@@ -20,7 +20,7 @@ extern "C"
         cudaMemcpy(cpu_arr, gpu_arr, count, cudaMemcpyDeviceToHost);
     }
 
-    float besse_func(float inp)
+    float bessel_func(float inp)
     {
         return cyl_bessel_if(0.0, inp);
     }
